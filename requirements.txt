@@ -1,0 +1,6 @@
+#requirements
+
+# requirements-dev
+pre-commit==2.13.0
+black
+autoflake
