@@ -33,9 +33,18 @@ There are many ways you can contribute to Auto-DL but before contributing to the
 
 ### Local development
 
-Auto-DL and it's packages can be developed locally. For instructions on how to setup the repository you can [refer this](https://auto-dl.readthedocs.io/en/latest/installing.html).
+1. Clone the repository
 
-Once the entire environment is setup, you are all set to start developing. Before sending your pull request for review, make sure your changes are consistent with the guidelines and follow the [styleguides](#styleguides).
+2. On your command prompt open the cloned folder and install the requirements from the requirements.txt using this command:
+```
+   pip install -r requirements.txt
+```
+
+3. To run the application execute the app.py file with this command:
+```
+   python app.py
+   #The web application will be hosted on the local server
+```
 
 ### Styleguides
 
