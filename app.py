@@ -17,7 +17,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 
 def predResult(result):
-   
+
     """Returns the predicted output class.
 
     Arguments:
