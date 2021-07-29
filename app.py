@@ -17,9 +17,11 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 
 def predResult(result):
-    """
-    Takes the 'result' array obtained from model's predict method as input and
-    returns the predicted output class.
+
+    """Returns the predicted output class.
+
+    Arguments:
+    result -- array obtained from model's predict method
     """
 
     if result.size > 1:
