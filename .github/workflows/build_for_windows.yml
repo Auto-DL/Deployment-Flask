@@ -10,6 +10,8 @@ jobs:
     name: Build for windows (.exe)
     runs-on: windows-latest
     steps:
+      - name: Install UPX
+        run: choco install upx -y
       - uses: actions/checkout@v2
       - name: Install Python 3.8
         uses: actions/setup-python@v2

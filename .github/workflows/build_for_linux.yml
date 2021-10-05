@@ -10,6 +10,10 @@ jobs:
     name: Build for linux 
     runs-on: ubuntu-latest
     steps:
+      - name: Install UPX
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y upx
       - uses: actions/checkout@v2
       - name: Install Python 3.8
         uses: actions/setup-python@v2
