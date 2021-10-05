@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build for linux (.sh)
+    name: Build for linux 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,14 +19,14 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Build sh with PyInstaller
+      - name: Build binary with PyInstaller
         run: pyinstaller app.py --onefile --clean
-      - name: Upload .sh
+      - name: Upload binary
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./dist/app.sh
-          asset_name: app.sh
-          asset_content_type: application/x-sh
+          asset_path: ./dist/app
+          asset_name: app
+          asset_content_type: application/octet-stream
