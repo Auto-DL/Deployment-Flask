@@ -3,6 +3,7 @@ numpy==1.19.5
 tensorflow==2.5.0
 Werkzeug==2.0.1
 Flask==2.0.1
+PyInstaller==4.5.1
 
 # requirements-dev
 pre-commit==2.13.0
