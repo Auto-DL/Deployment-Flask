@@ -1,0 +1,32 @@
+name: Build for Linux
+
+on: 
+  release:
+    types:
+      - created
+
+jobs:
+  build:
+    name: Build for linux (.sh)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build sh with PyInstaller
+        run: pyinstaller app.py --onefile --clean
+      - name: Upload .sh
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./dist/app.sh
+          asset_name: app.sh
+          asset_content_type: application/x-sh
