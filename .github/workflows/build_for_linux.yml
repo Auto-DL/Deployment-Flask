@@ -22,7 +22,8 @@ jobs:
       - name: Install and Create venv
         run: |
           pip install virtualenv
-          py -m venv env
+          python -m venv env
+          source ./env/bin/activate
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
