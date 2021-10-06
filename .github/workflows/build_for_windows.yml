@@ -19,7 +19,7 @@ jobs:
           python-version: 3.7
       - name: Install and Create venv
         run: |
-          pip install venv
+          pip install virtualenv
           py -m venv env
       - name: Install dependencies
         run: |
